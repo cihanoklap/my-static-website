@@ -224,6 +224,84 @@
             margin: 0 auto;
         }
 
+        /* Games */
+        .games-grid {
+            display: grid;
+            /* min() so a narrow phone can shrink the column below 320 rather
+               than pushing the card wider than the section that holds it. */
+            grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            text-align: left;
+        }
+
+        .game-card {
+            display: flex;
+            flex-direction: column;
+            padding: 2.5rem 2rem;
+            background: rgba(255, 255, 255, 0.75);
+            border: 2px solid rgba(255, 255, 255, 0.6);
+            border-radius: 24px;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .game-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+        }
+
+        .game-card h3 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #2B4C6F;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.5px;
+        }
+
+        .game-card p {
+            font-size: 1.05rem;
+            color: #2B4C6F;
+            line-height: 1.7;
+            text-align: left;
+            margin-bottom: 1.75rem;
+        }
+
+        /* Pushed to the bottom so two cards of unequal copy still line up. */
+        .game-card .store-links,
+        .game-card .coming-soon {
+            margin-top: auto;
+        }
+
+        .store-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .store-link {
+            display: inline-block;
+            padding: 0.85rem 1.75rem;
+            background: linear-gradient(135deg, #4A90A4 0%, #83C5BE 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 10px 25px rgba(74, 144, 164, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .store-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 30px rgba(74, 144, 164, 0.45);
+        }
+
+        .game-card .coming-soon {
+            margin: 0;
+        }
+
         /* Legal Pages */
         .legal-page {
             padding: 4rem 2rem;
@@ -353,9 +431,23 @@
             </section>
 
             <section id="games-section" class="content-section">
-                <h2>Memory Match</h2>
-                <p>A beautifully crafted memory matching game designed for all ages. Featuring large, clear visuals and intuitive controls, it's perfect for cognitive training and family fun.</p>
-                <div class="coming-soon">Coming Soon</div>
+                <h2>Our Games</h2>
+                <p>Games built to be picked up in a minute and come back to for months.</p>
+                <div class="games-grid">
+                    <article class="game-card">
+                        <h3>Memory Match: Focus &amp; Recall</h3>
+                        <p>A beautifully crafted memory matching game designed for all ages. Featuring large, clear visuals and intuitive controls, it's perfect for cognitive training and family fun.</p>
+                        <div class="store-links">
+                            <a class="store-link" href="https://apps.apple.com/us/app/memory-match-focus-recall/id6748830458" target="_blank" rel="noopener">App Store</a>
+                            <a class="store-link" href="https://play.google.com/store/apps/details?id=com.mapleowlgames.memorymatch" target="_blank" rel="noopener">Google Play</a>
+                        </div>
+                    </article>
+                    <article class="game-card">
+                        <h3>22-0 Fantasy Basketball Draft</h3>
+                        <p>Draft ten players in ninety seconds, then watch your season play out week by week. Win five of nine categories to win the week. Seven draft modes, a weekly league, and a title to chase.</p>
+                        <div class="coming-soon">Coming Soon</div>
+                    </article>
+                </div>
             </section>
         </div>
 
@@ -363,12 +455,22 @@
         <div id="games" class="page">
             <section class="content-section">
                 <h2>Our Games</h2>
-                <p>Here you'll find all our current and upcoming games designed to bring families together.</p>
+                <p>Here you'll find all our current and upcoming games.</p>
                 
-                <div style="margin-top: 3rem;">
-                    <h3 style="color: #2B4C6F; margin-bottom: 1rem;">Memory Match</h3>
-                    <p>A beautifully crafted memory matching game designed for all ages. Featuring large, clear visuals and intuitive controls, it's perfect for cognitive training and family fun.</p>
-                    <div class="coming-soon" style="margin-top: 1rem;">Coming Soon</div>
+                <div class="games-grid">
+                    <article class="game-card">
+                        <h3>Memory Match: Focus &amp; Recall</h3>
+                        <p>A beautifully crafted memory matching game designed for all ages. Featuring large, clear visuals and intuitive controls, it's perfect for cognitive training and family fun.</p>
+                        <div class="store-links">
+                            <a class="store-link" href="https://apps.apple.com/us/app/memory-match-focus-recall/id6748830458" target="_blank" rel="noopener">App Store</a>
+                            <a class="store-link" href="https://play.google.com/store/apps/details?id=com.mapleowlgames.memorymatch" target="_blank" rel="noopener">Google Play</a>
+                        </div>
+                    </article>
+                    <article class="game-card">
+                        <h3>22-0 Fantasy Basketball Draft</h3>
+                        <p>Draft ten players in ninety seconds, then watch your season play out week by week. Win five of nine categories to win the week. Seven draft modes, a weekly league, and a title to chase.</p>
+                        <div class="coming-soon">Coming Soon</div>
+                    </article>
                 </div>
             </section>
         </div>
