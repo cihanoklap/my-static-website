@@ -1,0 +1,9 @@
+{
+  "_comment": "Oldest builds 22-0 is happy with. `nudge` shows a dismissible UPDATE card below that build; `min` refuses to run below it. Omit a key to disable that level. Edit and push — no app release needed. Only builds that already carry the check will read this.",
+  "android": {
+    "nudge": 11
+  },
+  "ios": {
+    "nudge": 23
+  }
+}
